@@ -14,6 +14,7 @@ function backups() {
   MYB_VAR=("${MY_BACKUPS[0]}/var" "/Backups/var")
   MYB_HOME=("${MY_BACKUPS[0]}/home" "/Backups/home")
   MYB_SERVER=("${MY_BACKUPS[0]}/home/Server" "/Backups/Server")
+  MYB_PROJECTS=("${MY_BACKUPS[0]}/home/Projects" "/Backups/Projects")
   MYB_TMP=("${MY_BACKUPS[0]}/tmp" "/Backups/tmp")
   # creating temporary backup
   echo '# -----------------------------------------------------------------------#'
@@ -43,6 +44,8 @@ function backups() {
   echo ''
   backup_directory "System" "${MY_HOME[0]}" "${MYB_HOME[0]}"
   echo ''
+  backup_directory "Projects" "${MY_HOME[0]}" "${MYB_HOME[0]}"
+  echo ''
   backup_directory "mail" "/var" "${MYB_VAR[0]}"
   echo ''
   cleaning "${MYB_ETC[0]}"
@@ -57,14 +60,8 @@ function backups() {
   echo '#          Buckup Websites                                               #'
   echo '# -----------------------------------------------------------------------#'
 
-  # from directory Server
-  # backup_website "project_name" "databasename" "localhost"  "gandalf" "password"
-  # backup_website "project_name"
-
-  backup_website "somewebsite.eu" "database_name" "localhost"  "root" "your-password"
-  echo ''
-  backup_website "someweb.se" "someweb_database" "localhost"  "root" "your-password"
-  echo ''
+  # you can always change location of this list
+  source "${MY_HOME[0]}/efc/websites.sh"
 
   cleaning "${MYB_SERVER[0]}"
   
