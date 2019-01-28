@@ -95,6 +95,7 @@ function install_freeware() {
     list[52]=python3-pip
     list[53]=amule
     list[54]=gettext
+    list[55]=code
 
 
     # if such a file does not exist there then you have to make a link

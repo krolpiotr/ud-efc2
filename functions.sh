@@ -158,7 +158,6 @@ function cleaning() {
     return 0
   }
 # ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
 # name: general_backup() 
 # desc: Backup of Backups to one file
 # ------------------------------------------------------------------------
@@ -213,7 +212,6 @@ clean_backups() {
     echo -n "           removing files in $BACKUPSDIR that are older than $days days: "
     find "$dird" -mtime +$days -type f -exec echo {} \; -exec rm {} \; | wc -l
 }
-# ------------------------------------------------------------------------
 # ------------------------------------------------------------------------
 # name: backup_website() 
 # desc: Backup website
@@ -322,17 +320,5 @@ backup_website() {
             rm "$WEBDIR/"$OF
           fi
     fi
-}
-# ------------------------------------------------------------------------
-# name: clean_backups() 
-# desc: Backups older than 0 days are deleted
-# return: 0 ///////////////////////  psuje kompa 
-# removing files in  that are older than 0 days: rm: remove write-protected regular file '/swapfile'? 
-# ------------------------------------------------------------------------
-clean_website_backups() {
-    dird="$BACKUPSDIR/"
-    days=0
-    echo -n "           removing files in $BACKUPSDIR that are older than $days days: "
-    find "$dird" -mtime +$days -type f -exec echo {} \; -exec rm {} \; | wc -l
 }
 # ------------------------------------------------------------------------
