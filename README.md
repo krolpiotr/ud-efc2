@@ -5,15 +5,14 @@ last update: 2019-01-28
 
 ## Configuration
 
-First edit config file and in line:
+First edit config.sh file and in line:
+```bash
 DEVELOPMENT="/Recycle" # default: "" use example: "/Recycle"
+```
 change it to: 
+```bash
 DEVELOPMENT="" # default: "" use example: "/Recycle"
-
-
- application using the Zend Framework MVC layer and module
-systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with Zend Framework.
+```
 
 ## Using by Terminal
 
