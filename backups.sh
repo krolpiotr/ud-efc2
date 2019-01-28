@@ -61,7 +61,7 @@ function backups() {
   # backup_website "project_name" "databasename" "localhost"  "gandalf" "password"
   # backup_website "project_name"
 
-  backup_website "simon-phoenix.px.se" "simonphoenix" "localhost"  "root" "your-password"
+  backup_website "somewebsite.eu" "database_name" "localhost"  "root" "your-password"
   echo ''
   backup_website "someweb.se" "someweb_database" "localhost"  "root" "your-password"
   echo ''

@@ -179,7 +179,7 @@ general_backup() {
       echo '           Creating "General" here....'
       mkdir -p "$GENERALBACKUPSDIR"
       sudo chmod 755 "$GENERALBACKUPSDIR"
-      sudo chown phoenix:phoenix "$GENERALBACKUPSDIR"
+      sudo chown "$USERNAME":"$USERNAME" "$GENERALBACKUPSDIR"
     fi
     
     PROJECT="Backups"
@@ -196,10 +196,10 @@ general_backup() {
     else
       # we will make a backup
       echo "           Backup of $PROJECT - not done... creating backup..."
-      cd "/home/phoenix"
+      cd "/home/$USERNAME"
       tar czfP "$GENERALBACKUPSDIR/$BACKUPFILE" "$PROJECT"
       sudo chmod 755 "$GENERALBACKUPSDIR/$BACKUPFILE"
-      sudo chown phoenix:phoenix "$GENERALBACKUPSDIR/$BACKUPFILE"
+      sudo chown "$USERNAME":"$USERNAME" "$GENERALBACKUPSDIR/$BACKUPFILE"
     fi
 }
 # ------------------------------------------------------------------------
@@ -225,7 +225,7 @@ backup_website() {
     DBHOST=$3
     DBUSERNAME=$4
     DBPASSWORD=$5
-#echo "${MY_SERVER[0]}"
+    #echo "${MY_SERVER[0]}"
     WEBDIR="${MY_SERVER[0]}"
     BACKUPSDIR="${MYB_SERVER[0]}"
 
